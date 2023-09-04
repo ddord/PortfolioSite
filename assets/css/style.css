@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --header-height: 3rem;
+    --body-font: 'Montserrat', sans-serif;
+    --big-font-size1: 2rem;
+    --big-font-size2: 10rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    
+    --margin-2: 1rem;
+    --margin-4: 2rem;
+    --margin-5: 2.5rem;
+    --margin-6: 3rem;
+}
+
+
+/*---------- Base ----------*/
+*, ::before ::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/*---------- Layout ----------*/
+.home-container {
+    position: relative;
+    border-bottom: #DCDCDC 1px solid;
+}
+
+.main-header {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 20px;
+    /* margin-left: var(--margin-2);
+    margin-right: var(--margin-2); */
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+}
+
+
+/*---------- Nav ----------*/
+.nav {
+    height: var(--header-height);
+    align-items: start;
+    font-weight: 400;
+    padding-top: 40px;
+}
+
+.nav-item {
+    margin-left: var(--margin-6);
+    margin-bottom: 0;
+}
+
+.nav-link {
+    position: relative;
+    color: #151515;
+}
+
+.nav-link:hover {
+    position: relative;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-list {
+    display: flex;
+    padding-top: 0;
+}
+
+.active::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: #DCDCDC;  
+}
+
+.active {
+    font-weight: 800;
+}
+
+.vertical-line {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    width: 1px;
+    background-color: #DCDCDC;
+}
+
+/*---------- Home ----------*/
+.home {
+    position: relative;
+    row-gap: 5rem;
+    padding: 4rem 0 5rem;
+}
+
+.home-section {
+    align-self: center;
+}
+
+.home-title {
+    font-size: var(--big-font-size2);
+    margin-bottom: var(--margin-5);
+    color: #151515;
+}
+
+.home-title-normal {
+    color: #151515;
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--margin-5);
+}
+
+.home-title-small {
+    color: #939395;
+    opacity: 60%;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--margin-5);
+}
+
+.scrollDown {
+    animation: rotate_image 6s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circle-position {
+    width: 125px;
+    height: 125px;
+    position: relative;
+}
+
+.circle-sub-position {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+.scrollBox {
+    width: 26px;
+    height: 46px;
+    background-color: #fff;
+    border: black solid 3px;
+    border-radius: 30px;
+    position: relative;
+
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    background-color: #151515;
+    border-radius: 50%;
+    position: relative;
+    left: 30%;
+    animation: moveCircle 2s ease-in-out infinite;
+}
+
+@keyframes moveCircle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(33px);
+    }
+}
